@@ -11,13 +11,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Blog.IRepository\Blog.IRepository.csproj" />
+    <ProjectReference Include="..\Blog.IService\Blog.IService.csproj" />
     <ProjectReference Include="..\Blog.Model\Blog.Model.csproj" />
     <ProjectReference Include="..\Blog.Repository\Blog.Repository.csproj" />
+    <ProjectReference Include="..\Blog.Service\Blog.Service.csproj" />
   </ItemGroup>
 
 </Project>
