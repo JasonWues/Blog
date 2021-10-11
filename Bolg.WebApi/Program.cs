@@ -3,6 +3,7 @@ using Blog.IRepository;
 using Blog.IService;
 using Blog.Repository;
 using Blog.Service;
+using Blog.WebApi.AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -53,6 +54,11 @@ builder.Services.AddCustomIOC();
 
 #region JWT¼øÈ¨
 builder.Services.AddCustomJWT();
+#endregion
+
+#region AutoMapper
+
+builder.Services.AddAutoMapper(typeof(CustomAutoMapperProfile));
 #endregion
 
 var app = builder.Build();

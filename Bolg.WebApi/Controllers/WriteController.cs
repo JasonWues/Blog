@@ -1,5 +1,8 @@
-﻿using Blog.IService;
+﻿using AutoMapper;
+using Blog.IService;
 using Blog.Model;
+using Blog.Model.DTO;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Utility.ApiResult;
@@ -44,6 +47,15 @@ namespace Blog.WebApi.Controllers
             bool b = await _iWriteInfoService.EditAsync(writeInfo);
             if (!b) return ApiResultHelper.Error("修改失败");
             return ApiResultHelper.Success("修改成功");
+        }
+
+        [AllowAnonymous]
+        [HttpGet("FindWrite")]
+        public async Task<ApiResult> Find([FromServices]IMapper iMapper,int id)
+        {
+            var writeInfo = await _iWriteInfoService.FindAsync(id);
+            var writeInfoDTO = iMapper.Map<WriteDTO>(writeInfo);
+            return ApiResultHelper.Success(writeInfoDTO);
         }
     }
 }
