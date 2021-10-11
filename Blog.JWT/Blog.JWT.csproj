@@ -7,12 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.10" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.2" />
-    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.13.1" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Blog.IRepository\Blog.IRepository.csproj" />
     <ProjectReference Include="..\Blog.IService\Blog.IService.csproj" />
     <ProjectReference Include="..\Blog.Model\Blog.Model.csproj" />

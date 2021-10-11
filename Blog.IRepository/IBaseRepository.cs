@@ -9,6 +9,7 @@ namespace Blog.IRepository
         Task<bool> DeleteAsync(int id);
         Task<bool> EditAsync(TEntity entity);
         Task<TEntity> FindAsync(int id);
+        Task<TEntity> FindAsync(Expression<Func<TEntity, bool>> func);
         /// <summary>
         /// 查询全部
         /// </summary>

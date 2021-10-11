@@ -1,8 +1,8 @@
 ﻿using SqlSugar;
 
-namespace Blog.WebApi.Utility.ApiResult
+namespace Utility.ApiResult
 {
-    public static class ApiResultHelper
+    public class ApiResultHelper
     {
         public static ApiResult Success(object data)
         {
@@ -14,7 +14,7 @@ namespace Blog.WebApi.Utility.ApiResult
                 Total = 0
             };
         }
-        public static ApiResult Success(object data,RefAsync<int> total)
+        public static ApiResult Success(object data, RefAsync<int> total)
         {
             return new ApiResult
             {

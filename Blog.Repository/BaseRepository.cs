@@ -40,6 +40,11 @@ namespace Blog.Repository
             return await base.GetByIdAsync(id);
         }
 
+        public async Task<TEntity> FindAsync(Expression<Func<TEntity, bool>> func)
+        {
+            return await base.GetSingleAsync(func);
+        }
+
         public virtual async Task<List<TEntity>> QueryAsync()
         {
             return await base.GetListAsync();
